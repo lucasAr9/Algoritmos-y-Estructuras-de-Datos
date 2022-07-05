@@ -14,7 +14,7 @@ public class VerticeImplListAdy<T> implements Vertice<T> {
     }
 
     @Override
-    public T getdato() {
+    public T getDato() {
         return this.dato;
     }
 
@@ -100,5 +100,14 @@ public class VerticeImplListAdy<T> implements Vertice<T> {
             ret = arista.peso();
         }
         return ret;
+    }
+
+    /**
+     * Mostrar el contenido del vertice en String.
+     */
+    public String toString() {
+        String aux = "";
+        aux = aux + this.getDato() + ", " + this.getPosicion();
+        return aux;
     }
 }

@@ -108,5 +108,4 @@ public class GrafoImplListAdy<T> implements Grafo<T> {
     public int peso(Vertice<T> origen, Vertice<T> destino) {
         return ((VerticeImplListAdy<T>) origen).peso(destino);
     }
-
 }

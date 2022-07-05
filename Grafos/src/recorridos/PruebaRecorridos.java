@@ -2,23 +2,26 @@ package recorridos;
 
 import tp06.ejercicio3.GrafoImplListAdy;
 import tp06.ejercicio3.VerticeImplListAdy;
+import tp06.recorridos.RecorridosListaAdy;
 
-public class recorridos {
+public class PruebaRecorridos {
 
     public static void main(String[] args) {
 
-        GrafoImplListAdy<Integer> grafo = new GrafoImplListAdy<>();
-        //    (1)------(2)
-        //     |  10    | \30
-        //   20|      15| (5)
-        //     |  5     | /2
-        //    (4)------(3)
+        RecorridosListaAdy<Character> recorridos = new RecorridosListaAdy<>();
 
-        VerticeImplListAdy<Integer> vertice_1 = new VerticeImplListAdy<>(1);
-        VerticeImplListAdy<Integer> vertice_2 = new VerticeImplListAdy<>(2);
-        VerticeImplListAdy<Integer> vertice_3 = new VerticeImplListAdy<>(3);
-        VerticeImplListAdy<Integer> vertice_4 = new VerticeImplListAdy<>(4);
-        VerticeImplListAdy<Integer> vertice_5 = new VerticeImplListAdy<>(5);
+        GrafoImplListAdy<Character> grafo = new GrafoImplListAdy<>();
+        //    (a)------(b)
+        //     |  10    | \30
+        //   20|      15| (e)
+        //     |  5     | /2
+        //    (d)------(c)
+
+        VerticeImplListAdy<Character> vertice_1 = new VerticeImplListAdy<>('a');
+        VerticeImplListAdy<Character> vertice_2 = new VerticeImplListAdy<>('b');
+        VerticeImplListAdy<Character> vertice_3 = new VerticeImplListAdy<>('c');
+        VerticeImplListAdy<Character> vertice_4 = new VerticeImplListAdy<>('d');
+        VerticeImplListAdy<Character> vertice_5 = new VerticeImplListAdy<>('e');
 
         grafo.agregarVertice(vertice_1);
         grafo.agregarVertice(vertice_2);
@@ -43,6 +46,13 @@ public class recorridos {
         grafo.conectar(vertice_5, vertice_2, 30);
         grafo.conectar(vertice_5, vertice_3, 2);
 
-        System.out.println(grafo.vertice(1));
+        System.out.println("\nPeso entre b y e");
+        System.out.println(vertice_2.peso(vertice_5));
+
+        System.out.println("\nRecorrido DFS");
+        System.out.println(recorridos.dfs_lista(grafo));
+
+        System.out.println("\nRecorrido BFS");
+        System.out.println(recorridos.bfs_lista(grafo));
     }
 }

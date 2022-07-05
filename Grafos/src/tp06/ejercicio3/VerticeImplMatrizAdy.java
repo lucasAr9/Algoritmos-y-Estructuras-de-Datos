@@ -9,7 +9,7 @@ public class VerticeImplMatrizAdy<T> implements Vertice<T> {
     }
 
     @Override
-    public T getdato() {
+    public T getDato() {
         return this.dato;
     }
 
